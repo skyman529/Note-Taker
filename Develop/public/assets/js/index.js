@@ -1,4 +1,4 @@
-let noteTitle;
+const { response } = require("express");let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
@@ -31,7 +31,9 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+  })
+  .then((response) => response.json())
+  .then(console.log(response));
 
 const saveNote = (note) =>
   fetch('/api/notes', {

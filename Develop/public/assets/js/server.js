@@ -9,14 +9,10 @@ app.get("/api/notes",(req,res)=>{
     {
         let notes = JSON.parse(data);
         res.send(notes);
-        console.log("cannot find notes");
+        console.log("notes found");
     })
 });
 
-let noteTwo = {
-    title: "test two",
-    note: "test two"
-}
 
 let data = JSON.stringify(noteTwo);
 
